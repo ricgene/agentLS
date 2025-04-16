@@ -1,4 +1,6 @@
-# workflow.py
+# workflow2.py
+from dotenv import load_dotenv
+load_dotenv()
 from typing import TypedDict, Dict, Any, List, Annotated
 from langgraph.graph import StateGraph, END
 import os
@@ -19,13 +21,15 @@ if os.environ.get("LOCAL_LANGGRAPH_SERVER"):
     #os.environ["LANGCHAIN_API_KEY"] = ""  # Empty API key for local server
 else:
     LANGCHAIN_ENDPOINT = os.environ["LANGCHAIN_ENDPOINT_CLOUD"]
-    #os.environ["LANGCHAIN_API_KEY"]
-    #LANGSMITH_API_KEY = os.environ["LANGSMITH_API_KEY"]
-    #os.environ["OPENAI_API_KEY"] = "sk-proj-..."
+
+
+LANGCHAIN_API_KEY = os.environ["LANGCHAIN_API_KEY"]
+LANGSMITH_API_KEY = os.environ["LANGSMITH_API_KEY"]
+OPENAI_API_KEY = os.environ["OPENAI_API_KEY"]
 
 # Global variables to control mocking behavior
-# MOCK_USER_RESPONSES = os.environ["MOCK_USER_RESPONSES"]  # Set to False for real user interaction
-# MOCK_SENTIMENT_ANALYSIS = os.environ["MOCK_SENTIMENT_ANALYSIS"]  # Set to False for real LLM sentiment analysis
+MOCK_USER_RESPONSES = os.environ["MOCK_USER_RESPONSES"]  # Set to False for real user interaction
+MOCK_SENTIMENT_ANALYSIS = os.environ["MOCK_SENTIMENT_ANALYSIS"]  # Set to False for real LLM sentiment analysis
 
 # Define mock user responses
 POSITIVE_RESPONSES = [
