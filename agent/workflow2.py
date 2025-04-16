@@ -27,9 +27,13 @@ LANGCHAIN_API_KEY = os.environ["LANGCHAIN_API_KEY"]
 LANGSMITH_API_KEY = os.environ["LANGSMITH_API_KEY"]
 OPENAI_API_KEY = os.environ["OPENAI_API_KEY"]
 
+# Default to False if not set
+MOCK_USER_RESPONSES = os.environ.get("MOCK_USER_RESPONSES", "False").lower() == "true"
+MOCK_SENTIMENT_ANALYSIS = os.environ.get("MOCK_SENTIMENT_ANALYSIS", "False").lower() == "true"
+
 # Global variables to control mocking behavior
-MOCK_USER_RESPONSES = os.environ["MOCK_USER_RESPONSES"]  # Set to False for real user interaction
-MOCK_SENTIMENT_ANALYSIS = os.environ["MOCK_SENTIMENT_ANALYSIS"]  # Set to False for real LLM sentiment analysis
+#MOCK_USER_RESPONSES = os.environ["MOCK_USER_RESPONSES"]  # Set to False for real user interaction
+#MOCK_SENTIMENT_ANALYSIS = os.environ["MOCK_SENTIMENT_ANALYSIS"]  # Set to False for real LLM sentiment analysis
 
 # Define mock user responses
 POSITIVE_RESPONSES = [

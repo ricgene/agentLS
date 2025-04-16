@@ -2,7 +2,7 @@
 package-mode = false
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.11"
 langgraph = ">=0.0.25"
 langchain-anthropic = "^0.3.10"
 langchain-community = "^0.3.21"
